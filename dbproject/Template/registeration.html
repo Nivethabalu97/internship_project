@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+<div class="container" style="width:50%">
+    <h2><center>Registeration form</center></h2>
+  <form action="/myaccount/getregister" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" id="firstname"  name="firstname">
+    </div>
+      <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" id="lastname"  name="lastname">
+    </div>
+      <div class="form-group">
+      <label for="email">Email Id</label>
+      <input type="email" class="form-control" id="email"  name="email">
+    </div>
+      <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" id="username"  name="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="pwd"  name="pwd">
+    </div>
+      <div class="form-group">
+      <label for="confirmpassword">Confirm password</label>
+      <input type="password" class="form-control" id="confirmpassword"  name="confirmpassword">
+    </div>
+
+    <center><button type="submit" class="btn btn-info">Register</button></center>
+  </form>
+</div>
+<div>
+
+</div>
+</body>
+</html>
